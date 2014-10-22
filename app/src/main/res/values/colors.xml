@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="grayish_blue">#8899A6</color>
+    <color name="background_beige">#FFEDD4</color>
+    <color name="red_font">#EC5959</color>
+    <color name="green">#00A79B</color>
+    <color name="white">#FFF</color>
+    <color name="mopub_brown">#371F1F</color>
+
+    <color name="full_transparent">#00000000</color>
+    <color name="not_so_transparent">#44000000</color>
+    <color name="even_less_transparent">#66000000</color>
+</resources>

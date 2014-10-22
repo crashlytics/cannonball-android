@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="io.fabric.samples.cannonball.activity.AboutActivity">
+
+    <ImageView
+        android:id="@+id/cannonball_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/about_cannonball_logo_margin_bottom"
+        android:layout_marginTop="@dimen/about_cannonball_logo_margin_top"
+        android:contentDescription="@string/content_desc_icon"
+        android:src="@drawable/ic_logo"
+        android:tint="@color/green" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/about_scroll_view_margin"
+        android:layout_above="@+id/activate_crashes"
+        android:layout_below="@+id/cannonball_logo">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <io.fabric.samples.cannonball.view.AvenirTextView
+                android:id="@+id/instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/about_instruction_text_margin"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1"
+                android:text="@string/instructions"
+                android:textColor="@color/green"
+                android:textSize="@dimen/about_text_size" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/about_fabric_logo_width"
+                android:layout_height="@dimen/about_fabric_logo_height"
+                android:layout_below="@+id/instructions"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_fabric" />
+
+            <io.fabric.samples.cannonball.view.AvenirTextView
+                android:id="@+id/learn_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="@string/about_learn_more"
+                android:textColor="@color/tw__blue_default"
+                android:textSize="@dimen/about_text_size" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <CheckBox
+        android:id="@+id/activate_crashes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/deactivate_accounts"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="@dimen/about_crash_checkbox_margin_end"
+        android:layout_marginEnd="@dimen/about_crash_checkbox_margin_end"
+        android:layout_marginLeft="@dimen/about_crash_checkbox_margin_start"
+        android:layout_marginStart="@dimen/about_crash_checkbox_margin_start"
+        android:text="@string/about_activate_crashes"
+        android:textColor="@color/green" />
+
+    <io.fabric.samples.cannonball.view.AvenirTextView
+        android:id="@+id/deactivate_accounts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:padding="@dimen/about_sign_out_button_padding"
+        android:text="@string/sign_out"
+        android:textColor="@color/green"
+        android:textSize="@dimen/borderless_button_text_size" />
+
+</RelativeLayout>

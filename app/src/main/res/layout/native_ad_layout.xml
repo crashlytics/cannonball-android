@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/mopub_brown">
+
+    <io.fabric.samples.cannonball.view.AvenirTextView
+        android:id="@+id/sponsored_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mopub_sponsored"
+        android:textColor="@color/white"
+        android:textSize="@dimen/mopub_sponsored_text_size"
+        android:layout_alignTop="@+id/install_button"
+        android:layout_centerHorizontal="true" />
+
+    <io.fabric.samples.cannonball.view.AvenirTextView
+        android:layout_width="wrap_content"
+        android:id="@+id/install_button"
+        android:layout_height="wrap_content"
+        android:text="@string/mopub_install"
+        android:textColor="@color/white"
+        android:background="@drawable/mopub_install"
+        android:paddingLeft="@dimen/mopub_install_button_padding_start"
+        android:paddingStart="@dimen/mopub_install_button_padding_start"
+        android:paddingRight="@dimen/mopub_install_button_padding_end"
+        android:paddingEnd="@dimen/mopub_install_button_padding_end"
+        android:paddingTop="@dimen/mopub_install_button_padding_top"
+        android:paddingBottom="@dimen/mopub_install_button_padding_bottom"
+        android:textSize="@dimen/mopub_install_text_size"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="@dimen/mopub_install_button_margin_start"
+        android:layout_marginStart="@dimen/mopub_install_button_margin_start"
+        android:layout_marginRight="@dimen/mopub_install_button_margin_end"
+        android:layout_marginEnd="@dimen/mopub_install_button_margin_end"
+        android:layout_marginTop="@dimen/mopub_install_button_margin_top"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_beige"
+        android:layout_below="@id/install_button"
+        android:layout_margin="@dimen/mopub_ad_unit_container_margin">
+
+        <ImageView
+            android:id="@+id/native_ad_icon_image"
+            android:layout_width="@dimen/mopub_ad_icon_image_width"
+            android:layout_height="@dimen/mopub_ad_icon_image_height"
+            android:background="@null"
+            android:contentDescription="@string/mopub_ad_icon"
+            android:layout_margin="@dimen/mopub_ad_icon_image_margin"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"/>
+
+        <io.fabric.samples.cannonball.view.AvenirTextView
+            android:id="@+id/native_ad_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mopub_brown"
+            android:text="@string/mopub_app_property"
+            android:textSize="@dimen/mopub_ad_app_property_text_size"
+            android:layout_marginRight="@dimen/mopub_ad_app_property_margin_end"
+            android:layout_marginEnd="@dimen/mopub_ad_app_property_margin_end"
+            android:textStyle="bold"
+            android:layout_alignTop="@+id/native_ad_icon_image"
+            android:layout_toRightOf="@+id/native_ad_icon_image"
+            android:layout_toEndOf="@+id/native_ad_icon_image"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"/>
+
+        <io.fabric.samples.cannonball.view.AvenirTextView
+            android:id="@+id/native_ad_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mopub_ad_text_margin_start"
+            android:layout_marginStart="@dimen/mopub_ad_text_margin_start"
+            android:layout_marginRight="@dimen/mopub_ad_text_margin_end"
+            android:layout_marginEnd="@dimen/mopub_ad_text_margin_end"
+            android:layout_marginBottom="@dimen/mopub_ad_text_margin_bottom"
+            android:layout_toStartOf="@+id/native_ad_icon_image"
+            android:layout_toLeftOf="@+id/native_ad_icon_image"
+            android:text="@string/mopub_placeholder"
+            android:textColor="@color/mopub_brown"
+            android:textSize="@dimen/mopub_ad_text_size"
+            android:layout_below="@+id/native_ad_icon_image"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/native_ad_main_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/th_nature_01"
+            android:contentDescription="@string/mopub_ad_image"
+            android:scaleType="centerCrop"
+            android:layout_margin="@dimen/mopub_ad_main_image_margin"
+            android:layout_below="@+id/native_ad_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

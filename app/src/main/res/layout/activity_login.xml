@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:contentDescription="@string/content_desc_icon"
+        android:longClickable="true"
+        android:scaleType="center"
+        android:src="@drawable/ic_logo"
+        android:tint="@color/green" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5">
+
+        <io.fabric.samples.cannonball.view.CannonballTwitterLoginButton
+            android:id="@+id/twitter_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sign_up_button"
+            android:layout_marginTop="@dimen/login_button_margin_top"
+            android:layout_marginBottom="@dimen/login_button_margin_bottom"
+            android:layout_marginLeft="@dimen/login_button_margin_start"
+            android:layout_marginStart="@dimen/login_button_margin_start"
+            android:layout_marginRight="@dimen/login_button_margin_end"
+            android:layout_marginEnd="@dimen/login_button_margin_end"
+            android:text="@string/sign_in_with_twitter"
+            android:textColor="@color/grayish_blue"
+            android:textSize="@dimen/login_button_text_size"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <io.fabric.samples.cannonball.view.CannonballDigitsAuthButton
+            android:id="@+id/phone_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sign_up_button"
+            android:layout_marginTop="@dimen/login_button_margin_top"
+            android:layout_marginBottom="@dimen/login_button_margin_bottom"
+            android:layout_marginLeft="@dimen/login_button_margin_start"
+            android:layout_marginStart="@dimen/login_button_margin_start"
+            android:layout_marginRight="@dimen/login_button_margin_end"
+            android:layout_marginEnd="@dimen/login_button_margin_end"
+            android:text="@string/sign_in_with_phone"
+            android:layout_below="@id/twitter_button"
+            android:textColor="@color/grayish_blue"
+            android:textSize="@dimen/login_button_text_size"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <io.fabric.samples.cannonball.view.AvenirTextView
+            android:id="@+id/skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/skip"
+            android:textColor="@color/green"
+            android:textSize="@dimen/borderless_button_text_size"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+</LinearLayout>

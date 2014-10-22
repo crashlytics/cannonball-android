@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height">
+
+        <ImageView
+            android:id="@+id/history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/top_bar_left_side_button_margin_start"
+            android:layout_marginStart="@dimen/top_bar_left_side_button_margin_start"
+            android:contentDescription="@string/content_desc_history"
+            android:src="@drawable/ic_history"
+            android:tint="@color/green" />
+
+        <ImageView
+            android:id="@+id/cannonball_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/content_desc_icon"
+            android:src="@drawable/ic_logo"
+            android:tint="@color/green" />
+
+        <ImageView
+            android:id="@+id/popular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/top_bar_right_side_button_margin_end"
+            android:layout_marginEnd="@dimen/top_bar_right_side_button_margin_end"
+            android:contentDescription="@string/content_desc_popular"
+            android:src="@drawable/ic_popular"
+            android:tint="@color/green" />
+    </RelativeLayout>
+
+   <ListView
+       android:id="@+id/theme_list"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:divider="@null"/>
+
+</LinearLayout>

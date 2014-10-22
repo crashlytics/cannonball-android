@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cannonball</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="content_desc_back">Back button</string>
+    <string name="content_desc_done">Done</string>
+    <string name="content_desc_poempic">Poem background</string>
+    <string name="content_desc_icon">Application icon</string>
+    <string name="content_desc_popular">Popular poems</string>
+    <string name="content_desc_history">History</string>
+    <string name="share">Share</string>
+    <string name="delete">Delete</string>
+    <string name="sign_out">Sign out</string>
+    <string name="sign_in_with_twitter">Sign in with Twitter</string>
+    <string name="sign_in_with_phone">Sign in with Phone</string>
+    <string name="share_poem_tweet_text">Look at the poem I wrote using #cannonballapp</string>
+    <string name="seconds_to_go">60</string>
+    <string name="about_learn_more">Learn more at t.co/cannonball</string>
+    <string name="about_activate_crashes">Activate crashes (for demo purposes)</string>
+
+    <string name="toast_poem_created">Poem written successfully!</string>
+    <string name="toast_poem_error">An error occurred when creating the poem, please try again.</string>
+    <string name="toast_poem_deleted">Poem deleted</string>
+    <string name="toast_poem_delete_error">An error occurred when deleting the poem.</string>
+    <string name="toast_share_error">An error occurred when trying to share your poem.</string>
+    <string name="toast_retrieve_tweets_error">Failed to retrieve tweets</string>
+    <string name="toast_twitter_signin_fail">It was not possible to Sign in with Twitter, try again later</string>
+    <string name="toast_twitter_digits_fail">It was not possible to Sign up with your Phone, try again later</string>
+    <string name="toast_wordless_poem">There\'s no poem without words on it…</string>
+
+    <string name="poem_placeholder">This will be a poem generate by the user, how awesome is that, don\' get excited, this is just a placeholder</string>
+    <string name="theme_placeholder">#adventure</string>
+    <string name="skip">skip</string>
+
+    <string name="mopub_sponsored">#Sponsored</string>
+    <string name="mopub_install">Install</string>
+    <string name="mopub_placeholder">This is the text of an Ad that will be loaded by MoPub</string>
+    <string name="mopub_ad_image">Ad Image</string>
+    <string name="mopub_ad_icon">Ad Icon</string>
+    <string name="mopub_app_property" translateable="false">Clash of Clans</string>
+
+    <string name="poem_history_title">Your Poems</string>
+    <string name="popular_poems_title">Popular Poems</string>
+    <string name="you_need_twitter">You need to activate your Twitter account to see popular poems.</string>
+    <string name="title_activity_about">About</string>
+
+    <string name="instructions">
+        Cannonball is the fun way to create and share stories and poems on your phone.
+        Start with a beautiful image from the gallery, then choose words about #adventure,
+        #romance, #nature or #mystery to complete the story and share it with friends.
+        Browse top stories created by other users for inspiration.\n\n
+        Cannonball was built with Fabric.
+    </string>
+
+    <string-array name="themes">
+        <item>adventure</item>
+        <item>mystery</item>
+        <item>nature</item>
+        <item>romance</item>
+    </string-array>
+
+    <string name="adventure">#Adventure</string>
+    <string name="mystery">#Mystery</string>
+    <string name="nature">#Nature</string>
+    <string name="romance">#Romance</string>
+
+    <string-array name="wordbank_suffixes">
+        <item>d</item>
+        <item>es</item>
+        <item>ing</item>
+        <item>ly</item>
+        <item>s</item>
+        <item>y</item>
+        <item>ed</item>
+        <item>r</item>
+        <item>er</item>
+        <item>e</item>
+    </string-array>
+
+    <string-array name="wordbank_adventure">
+        <item>&amp;</item>
+        <item>a</item>
+        <item>a</item>
+        <item>about</item>
+        <item>always</item>
+        <item>am</item>
+        <item>and</item>
+        <item>an</item>
+        <item>another</item>
+        <item>are</item>
+        <item>as</item>
+        <item>at</item>
+        <item>begin</item>
+        <item>between</item>
+        <item>but</item>
+        <item>by</item>
+        <item>can</item>
+        <item>d</item>
+        <item>day</item>
+        <item>delicious</item>
+        <item>es</item>
+        <item>every</item>
+        <item>everyone</item>
+        <item>everything</item>
+        <item>fantastic</item>
+        <item>fresh</item>
+        <item>from</item>
+        <item>good</item>
+        <item>have</item>
+        <item>he</item>
+        <item>hear</item>
+        <item>heart</item>
+        <item>her</item>
+        <item>here</item>
+        <item>his</item>
+        <item>how</item>
+        <item>I</item>
+        <item>I</item>
+        <item>if</item>
+        <item>in</item>
+        <item>in</item>
+        <item>ing</item>
+        <item>ing</item>
+        <item>is</item>
+        <item>is</item>
+        <item>it</item>
+        <item>lay</item>
+        <item>life</item>
+        <item>like</item>
+        <item>like</item>
+        <item>live</item>
+        <item>love</item>
+        <item>lovely</item>
+        <item>ly</item>
+        <item>make</item>
+        <item>marvel</item>
+        <item>more</item>
+        <item>must</item>
+        <item>my</item>
+        <item>need</item>
+        <item>no</item>
+        <item>no</item>
+        <item>nothing</item>
+        <item>of</item>
+        <item>of</item>
+        <item>on</item>
+        <item>only</item>
+        <item>or</item>
+        <item>our</item>
+        <item>out</item>
+        <item>pack</item>
+        <item>s</item>
+        <item>s</item>
+        <item>sleep</item>
+        <item>the</item>
+        <item>the</item>
+        <item>then</item>
+        <item>there</item>
+        <item>they</item>
+        <item>through</item>
+        <item>too</item>
+        <item>try</item>
+        <item>up</item>
+        <item>us</item>
+        <item>use</item>
+        <item>was</item>
+        <item>we</item>
+        <item>were</item>
+        <item>which</item>
+        <item>who</item>
+        <item>why</item>
+        <item>will</item>
+        <item>with</item>
+        <item>with</item>
+        <item>wonder</item>
+        <item>world</item>
+        <item>would</item>
+        <item>wrap</item>
+        <item>y</item>
+        <item>you</item>
+        <item>be</item>
+        <item>better</item>
+        <item>bring</item>
+        <item>burn</item>
+        <item>come</item>
+        <item>did</item>
+        <item>do</item>
+        <item>e</item>
+        <item>ed</item>
+        <item>er</item>
+        <item>favorite</item>
+        <item>for</item>
+        <item>give</item>
+        <item>has</item>
+        <item>him</item>
+        <item>hot</item>
+        <item>know</item>
+        <item>ly</item>
+        <item>me</item>
+        <item>more</item>
+        <item>my</item>
+        <item>perfection</item>
+        <item>poet</item>
+        <item>quiet</item>
+        <item>r</item>
+        <item>see</item>
+        <item>she</item>
+        <item>so</item>
+        <item>some</item>
+        <item>sweet</item>
+        <item>than</item>
+        <item>that</item>
+        <item>this</item>
+        <item>though</item>
+        <item>your</item>
+        <item>country</item>
+        <item>cover</item>
+        <item>cut</item>
+        <item>top</item>
+    </string-array>
+    <string-array name="images_adventure">
+        <item>th_adventure_01</item>
+        <item>th_adventure_02</item>
+        <item>th_adventure_03</item>
+        <item>th_adventure_04</item>
+        <item>th_adventure_05</item>
+        <item>th_adventure_06</item>
+    </string-array>
+    <string-array name="wordbank_romance">
+        <item>&amp;</item>
+        <item>a</item>
+        <item>a</item>
+        <item>about</item>
+        <item>always</item>
+        <item>am</item>
+        <item>and</item>
+        <item>an</item>
+        <item>another</item>
+        <item>are</item>
+        <item>as</item>
+        <item>at</item>
+        <item>begin</item>
+        <item>between</item>
+        <item>but</item>
+        <item>by</item>
+        <item>can</item>
+        <item>craved</item>
+        <item>day</item>
+        <item>es</item>
+        <item>every</item>
+        <item>everyone</item>
+        <item>everything</item>
+        <item>from</item>
+        <item>good</item>
+        <item>have</item>
+        <item>he</item>
+        <item>hear</item>
+        <item>heart</item>
+        <item>her</item>
+        <item>here</item>
+        <item>his</item>
+        <item>how</item>
+        <item>I</item>
+        <item>I</item>
+        <item>if</item>
+        <item>in</item>
+        <item>in</item>
+        <item>ing</item>
+        <item>ing</item>
+        <item>is</item>
+        <item>is</item>
+        <item>it</item>
+        <item>life</item>
+        <item>like</item>
+        <item>like</item>
+        <item>live</item>
+        <item>love</item>
+        <item>lovely</item>
+        <item>ly</item>
+        <item>make</item>
+        <item>mouth</item>
+        <item>must</item>
+        <item>my</item>
+        <item>need</item>
+        <item>no</item>
+        <item>no</item>
+        <item>nothing</item>
+        <item>of</item>
+        <item>of</item>
+        <item>on</item>
+        <item>only</item>
+        <item>or</item>
+        <item>our</item>
+        <item>out</item>
+        <item>perfume</item>
+        <item>s</item>
+        <item>s</item>
+        <item>sleep</item>
+        <item>the</item>
+        <item>the</item>
+        <item>then</item>
+        <item>there</item>
+        <item>they</item>
+        <item>through</item>
+        <item>too</item>
+        <item>try</item>
+        <item>up</item>
+        <item>us</item>
+        <item>use</item>
+        <item>was</item>
+        <item>we</item>
+        <item>were</item>
+        <item>which</item>
+        <item>who</item>
+        <item>why</item>
+        <item>will</item>
+        <item>with</item>
+        <item>with</item>
+        <item>wonder</item>
+        <item>world</item>
+        <item>would</item>
+        <item>wrap</item>
+        <item>y</item>
+        <item>you</item>
+        <item>be</item>
+        <item>better</item>
+        <item>bring</item>
+        <item>burn</item>
+        <item>come</item>
+        <item>desire</item>
+        <item>did</item>
+        <item>do</item>
+        <item>e</item>
+        <item>ed</item>
+        <item>er</item>
+        <item>favorite</item>
+        <item>for</item>
+        <item>give</item>
+        <item>has</item>
+        <item>him</item>
+        <item>hot</item>
+        <item>know</item>
+        <item>ly</item>
+        <item>me</item>
+        <item>more</item>
+        <item>my</item>
+        <item>perfection</item>
+        <item>poet</item>
+        <item>quiet</item>
+        <item>r</item>
+        <item>see</item>
+        <item>she</item>
+        <item>so</item>
+        <item>some</item>
+        <item>sweet</item>
+        <item>than</item>
+        <item>that</item>
+        <item>this</item>
+        <item>though</item>
+        <item>your</item>
+    </string-array>
+    <string-array name="images_romance">
+        <item>th_romance_01</item>
+        <item>th_romance_02</item>
+        <item>th_romance_03</item>
+        <item>th_romance_04</item>
+        <item>th_romance_05</item>
+        <item>th_romance_06</item>
+    </string-array>
+    <string-array name="wordbank_nature">
+        <item>&amp;</item>
+        <item>a</item>
+        <item>a</item>
+        <item>about</item>
+        <item>air</item>
+        <item>alive</item>
+        <item>alpine</item>
+        <item>always</item>
+        <item>am</item>
+        <item>an</item>
+        <item>and</item>
+        <item>another</item>
+        <item>are</item>
+        <item>aroma</item>
+        <item>as</item>
+        <item>at</item>
+        <item>backpack</item>
+        <item>be</item>
+        <item>begin</item>
+        <item>better</item>
+        <item>between</item>
+        <item>bluebird</item>
+        <item>bring</item>
+        <item>burn</item>
+        <item>but</item>
+        <item>by</item>
+        <item>can</item>
+        <item>come</item>
+        <item>cover</item>
+        <item>crisp</item>
+        <item>cut</item>
+        <item>d</item>
+        <item>day</item>
+        <item>did</item>
+        <item>do</item>
+        <item>e</item>
+        <item>ed</item>
+        <item>er</item>
+        <item>es</item>
+        <item>every</item>
+        <item>everyone</item>
+        <item>everything</item>
+        <item>fantastic</item>
+        <item>favorite</item>
+        <item>flower</item>
+        <item>for</item>
+        <item>fresh</item>
+        <item>from</item>
+        <item>give</item>
+        <item>good</item>
+        <item>has</item>
+        <item>have</item>
+        <item>he</item>
+        <item>hear</item>
+        <item>heart</item>
+        <item>her</item>
+        <item>here</item>
+        <item>him</item>
+        <item>his</item>
+        <item>hot</item>
+        <item>how</item>
+        <item>I</item>
+        <item>I</item>
+        <item>if</item>
+        <item>in</item>
+        <item>in</item>
+        <item>ing</item>
+        <item>ing</item>
+        <item>is</item>
+        <item>is</item>
+        <item>it</item>
+        <item>know</item>
+        <item>lay</item>
+        <item>life</item>
+        <item>like</item>
+        <item>like</item>
+        <item>live</item>
+        <item>living</item>
+        <item>love</item>
+        <item>lovely</item>
+        <item>ly</item>
+        <item>ly</item>
+        <item>make</item>
+        <item>marvel</item>
+        <item>me</item>
+        <item>more</item>
+        <item>more</item>
+        <item>morning</item>
+        <item>must</item>
+        <item>my</item>
+        <item>my</item>
+        <item>need</item>
+        <item>no</item>
+        <item>no</item>
+        <item>nothing</item>
+        <item>oak</item>
+        <item>of</item>
+        <item>of</item>
+        <item>on</item>
+        <item>only</item>
+        <item>or</item>
+        <item>our</item>
+        <item>out</item>
+        <item>park</item>
+        <item>perfection</item>
+        <item>poet</item>
+        <item>quiet</item>
+        <item>r</item>
+        <item>rain</item>
+        <item>s</item>
+        <item>s</item>
+        <item>see</item>
+        <item>she</item>
+        <item>sleep</item>
+        <item>so</item>
+        <item>some</item>
+        <item>than</item>
+        <item>that</item>
+        <item>the</item>
+        <item>the</item>
+        <item>then</item>
+        <item>there</item>
+        <item>they</item>
+        <item>this</item>
+        <item>though</item>
+        <item>through</item>
+        <item>too</item>
+        <item>top</item>
+        <item>tree</item>
+        <item>try</item>
+        <item>up</item>
+        <item>us</item>
+        <item>use</item>
+        <item>was</item>
+        <item>we</item>
+        <item>were</item>
+        <item>which</item>
+        <item>who</item>
+        <item>why</item>
+        <item>will</item>
+        <item>with</item>
+        <item>with</item>
+        <item>wonder</item>
+        <item>wood</item>
+        <item>world</item>
+        <item>would</item>
+        <item>y</item>
+        <item>you</item>
+        <item>your</item>
+    </string-array>
+    <string-array name="images_nature">
+        <item>th_nature_01</item>
+        <item>th_nature_02</item>
+        <item>th_nature_03</item>
+        <item>th_nature_04</item>
+        <item>th_nature_05</item>
+        <item>th_nature_06</item>
+    </string-array>
+    <string-array name="wordbank_mystery">
+        <item>&amp;</item>
+        <item>a</item>
+        <item>a</item>
+        <item>about</item>
+        <item>always</item>
+        <item>am</item>
+        <item>an</item>
+        <item>and</item>
+        <item>another</item>
+        <item>are</item>
+        <item>as</item>
+        <item>at</item>
+        <item>be</item>
+        <item>begin</item>
+        <item>better</item>
+        <item>between</item>
+        <item>bring</item>
+        <item>burn</item>
+        <item>but</item>
+        <item>by</item>
+        <item>can</item>
+        <item>come</item>
+        <item>cover</item>
+        <item>cut</item>
+        <item>d</item>
+        <item>day</item>
+        <item>did</item>
+        <item>do</item>
+        <item>e</item>
+        <item>ed</item>
+        <item>elixir</item>
+        <item>er</item>
+        <item>es</item>
+        <item>every</item>
+        <item>everyone</item>
+        <item>everything</item>
+        <item>fantastic</item>
+        <item>favorite</item>
+        <item>for</item>
+        <item>from</item>
+        <item>give</item>
+        <item>good</item>
+        <item>has</item>
+        <item>have</item>
+        <item>he</item>
+        <item>hear</item>
+        <item>heart</item>
+        <item>her</item>
+        <item>here</item>
+        <item>him</item>
+        <item>his</item>
+        <item>hot</item>
+        <item>how</item>
+        <item>I</item>
+        <item>I</item>
+        <item>if</item>
+        <item>in</item>
+        <item>in</item>
+        <item>ing</item>
+        <item>ing</item>
+        <item>is</item>
+        <item>is</item>
+        <item>it</item>
+        <item>know</item>
+        <item>lay</item>
+        <item>life</item>
+        <item>like</item>
+        <item>like</item>
+        <item>live</item>
+        <item>love</item>
+        <item>lovely</item>
+        <item>ly</item>
+        <item>ly</item>
+        <item>make</item>
+        <item>marvel</item>
+        <item>me</item>
+        <item>more</item>
+        <item>more</item>
+        <item>must</item>
+        <item>my</item>
+        <item>my</item>
+        <item>need</item>
+        <item>night</item>
+        <item>no</item>
+        <item>nothing</item>
+        <item>of</item>
+        <item>of</item>
+        <item>on</item>
+        <item>only</item>
+        <item>or</item>
+        <item>our</item>
+        <item>out</item>
+        <item>perfection</item>
+        <item>poet</item>
+        <item>quiet</item>
+        <item>r</item>
+        <item>s</item>
+        <item>s</item>
+        <item>see</item>
+        <item>she</item>
+        <item>sleep</item>
+        <item>so</item>
+        <item>some</item>
+        <item>sweet</item>
+        <item>than</item>
+        <item>that</item>
+        <item>the</item>
+        <item>the</item>
+        <item>then</item>
+        <item>there</item>
+        <item>they</item>
+        <item>this</item>
+        <item>though</item>
+        <item>through</item>
+        <item>too</item>
+        <item>top</item>
+        <item>try</item>
+        <item>up</item>
+        <item>us</item>
+        <item>use</item>
+        <item>was</item>
+        <item>we</item>
+        <item>were</item>
+        <item>which</item>
+        <item>who</item>
+        <item>why</item>
+        <item>will</item>
+        <item>with</item>
+        <item>with</item>
+        <item>wonder</item>
+        <item>wood</item>
+        <item>world</item>
+        <item>would</item>
+        <item>wrap</item>
+        <item>y</item>
+        <item>you</item>
+        <item>your</item>
+    </string-array>
+    <string-array name="images_mystery">
+        <item>th_mystery_01</item>
+        <item>th_mystery_02</item>
+        <item>th_mystery_03</item>
+        <item>th_mystery_04</item>
+        <item>th_mystery_05</item>
+        <item>th_mystery_06</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,22 @@
+// This file was modified from
+// https://github.com/marcoRS/volley-examples/blob/master/config/quality.gradle
+
+// Temporary: Submitted PR to gradle to update checkstyle version
+configurations {
+    codequality
+}
+dependencies {
+    codequality 'com.puppycrawl.tools:checkstyle:5.7'
+}
+
+apply plugin: 'checkstyle'
+
+task checkstyle(type: Checkstyle) {
+    configFile file("${project.rootDir}/config/checkstyle/checkstyle.xml")
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    classpath = files()
+    checkstyleClasspath = project.configurations.codequality
+}

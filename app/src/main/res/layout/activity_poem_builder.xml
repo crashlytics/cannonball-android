@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/top_bar_left_side_button_margin_start"
+            android:layout_marginStart="@dimen/top_bar_left_side_button_margin_start"
+            android:contentDescription="@string/content_desc_back"
+            android:src="@drawable/ic_back"
+            android:tint="@color/green" />
+
+        <io.fabric.samples.cannonball.view.AvenirTextView
+            android:id="@+id/countdown_count"
+            android:layout_width="@dimen/countdown_text_width"
+            android:layout_height="@dimen/countdown_text_height"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:paddingRight="@dimen/countdown_text_padding_end"
+            android:paddingEnd="@dimen/countdown_text_padding_end"
+            android:paddingLeft="@dimen/countdown_text_padding_start"
+            android:paddingStart="@dimen/countdown_text_padding_start"
+            android:paddingTop="@dimen/countdown_text_padding_top"
+            android:text="@string/seconds_to_go"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/green"
+            android:textSize="@dimen/countdown_text_size" />
+
+        <io.fabric.samples.cannonball.view.CountdownView
+            android:layout_width="@dimen/countdown_spinner_width"
+            android:layout_height="@dimen/countdown_spinner_height"
+            android:padding="@dimen/countdown_spinner_padding"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:currentTime="60"
+            app:countdownTime="60"
+            app:color="@color/green"
+            android:id="@+id/countdown_spinner_view"/>
+
+        <ImageView
+            android:id="@+id/tick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/top_bar_right_side_button_margin_end"
+            android:layout_marginEnd="@dimen/top_bar_right_side_button_margin_end"
+            android:contentDescription="@string/content_desc_done"
+            android:src="@drawable/ic_tick"
+            android:tint="@color/grayish_blue" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/weighted_height"
+        android:layout_weight="3"
+        android:background="@android:color/white">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/poem_image_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_beige"/>
+
+        <io.fabric.samples.cannonball.view.FlowLayout
+            android:id="@+id/poem_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/word_container_padding">
+
+        </io.fabric.samples.cannonball.view.FlowLayout>
+
+    </RelativeLayout>
+
+    <io.fabric.samples.cannonball.view.FlowLayout
+        android:id="@+id/words_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/weighted_height"
+        android:layout_weight="2"
+        android:padding="@dimen/word_container_padding">
+
+    </io.fabric.samples.cannonball.view.FlowLayout>
+
+    <io.fabric.samples.cannonball.view.AvenirTextView
+        android:id="@+id/shuffle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_bar_height"
+        android:background="@color/background_beige"
+        android:gravity="center"
+        android:text="@string/shuffle"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/green" />
+
+    <io.fabric.samples.cannonball.view.AvenirTextView
+        android:id="@+id/placeholder"
+        style="@style/placeholder"
+        android:visibility="gone" />
+
+</LinearLayout>

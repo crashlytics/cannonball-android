@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/poem_container"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/poem_height"
+    android:padding="@dimen/poem_padding">
+
+    <ImageView
+        android:id="@+id/poem_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/content_desc_poempic"
+        android:scaleType="centerCrop" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_linear"
+        />
+
+    <ImageView
+        android:id="@+id/share"
+        android:layout_width="@dimen/share_width"
+        android:layout_height="@dimen/share_height"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/share_margin_end"
+        android:layout_marginEnd="@dimen/share_margin_end"
+        android:layout_marginTop="@dimen/share_margin_top"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/share"
+        android:scaleType="fitXY"
+        android:tint="@color/white"
+        android:src="@drawable/ic_share" />
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="@dimen/poem_delete_button_width"
+        android:layout_height="@dimen/poem_delete_button_height"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/poem_delete_button_margin_start"
+        android:layout_marginStart="@dimen/poem_delete_button_margin_start"
+        android:layout_marginTop="@dimen/poem_delete_button_margin_start"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/delete"
+        android:scaleType="fitXY"
+        android:tint="@color/white"
+        android:src="@drawable/ic_delete" />
+
+    <io.fabric.samples.cannonball.view.AvenirTextView
+        android:id="@+id/poem_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="@dimen/poem_text_margin_bottom"
+        android:padding="@dimen/poem_text_padding"
+        android:text="@string/poem_placeholder"
+        android:textAppearance="@style/poem_text" />
+
+    <io.fabric.samples.cannonball.view.AvenirTextView
+        android:id="@+id/poem_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/poem_theme_text_margin_top"
+        android:text="@string/theme_placeholder"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/white"
+        android:textSize="@dimen/poem_theme_text_size" />
+
+</RelativeLayout>
+

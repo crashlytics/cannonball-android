@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/background_beige</item>
+    </style>
+
+    <style name="AboutTheme" parent="android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@color/background_beige</item>
+    </style>
+
+    <style name="placeholder">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/placeholder</item>
+        <item name="android:padding">@dimen/word_container_padding</item>
+    </style>
+
+    <style name="poem_text">
+        <item name="android:textSize">@dimen/poem_text_size</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

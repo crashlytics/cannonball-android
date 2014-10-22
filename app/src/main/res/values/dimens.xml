@@ -1,0 +1,108 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- General interface sizing -->
+    <dimen name="top_bar_height">70dp</dimen>
+    <dimen name="top_bar_text_size">25sp</dimen>
+    <dimen name="top_bar_left_side_button_margin_start">20dp</dimen>
+    <dimen name="top_bar_right_side_button_margin_end">20dp</dimen>
+    <dimen name="bottom_bar_height">50dp</dimen>
+    <dimen name="weighted_height">0dp</dimen>
+
+    <!-- General Text Styles -->
+    <dimen name="borderless_button_text_size">20sp</dimen>
+
+    <!-- PoemBuilder -->
+    <dimen name="word_padding_horizontal">15dp</dimen>
+    <dimen name="word_padding_vertical">15dp</dimen>
+    <dimen name="word_stroke_width">2dp</dimen>
+    <dimen name="word_text_size">22sp</dimen>
+    <dimen name="word_container_padding">7dp</dimen>
+    <dimen name="countdown_text_width">30dp</dimen>
+    <dimen name="countdown_text_height">30dp</dimen>
+    <dimen name="countdown_text_padding_start">4dp</dimen>
+    <dimen name="countdown_text_padding_end">4dp</dimen>
+    <dimen name="countdown_text_padding_top">3dp</dimen>
+    <dimen name="countdown_text_size">20sp</dimen>
+    <dimen name="countdown_spinner_width">60dp</dimen>
+    <dimen name="countdown_spinner_height">60dp</dimen>
+    <dimen name="countdown_spinner_padding">0dp</dimen>
+
+    <!-- Poem -->
+    <dimen name="poem_height">350dp</dimen>
+    <dimen name="poem_padding">0dp</dimen>
+    <dimen name="poem_text_padding">10dp</dimen>
+    <dimen name="poem_text_margin_bottom">20dp</dimen>
+    <dimen name="poem_text_size">25sp</dimen>
+    <dimen name="poem_theme_text_size">25sp</dimen>
+    <dimen name="poem_list_divider_height">25dp</dimen>
+    <dimen name="poem_delete_button_width">40dp</dimen>
+    <dimen name="poem_delete_button_height">40dp</dimen>
+    <dimen name="poem_delete_button_margin_start">22dp</dimen>
+    <dimen name="poem_delete_button_margin_top">15dp</dimen>
+    <dimen name="poem_theme_text_margin_top">20dp</dimen>
+
+    <!-- Sharing dimensions -->
+    <dimen name="share_width">40dp</dimen>
+    <dimen name="share_height">40dp</dimen>
+    <dimen name="share_width_px">800px</dimen>
+    <dimen name="share_height_px">800px</dimen>
+    <dimen name="share_margin_top">15dp</dimen>
+    <dimen name="share_margin_end">22dp</dimen>
+    <dimen name="share_text_size">30px</dimen>
+    <dimen name="share_text_margin_bottom">30px</dimen>
+    <dimen name="share_text_padding">30px</dimen>
+
+    <!-- ThemeChooser -->
+    <dimen name="theme_name_margin_bottom">10dp</dimen>
+    <dimen name="theme_name_font_size">30sp</dimen>
+
+    <!-- About -->
+    <dimen name="about_cannonball_logo_margin_top">15dp</dimen>
+    <dimen name="about_cannonball_logo_margin_bottom">0dp</dimen>
+    <dimen name="about_scroll_view_margin">10dp</dimen>
+    <dimen name="about_instruction_text_margin">5dp</dimen>
+    <dimen name="about_text_size">15sp</dimen>
+    <dimen name="about_fabric_logo_width">150dp</dimen>
+    <dimen name="about_fabric_logo_height">150dp</dimen>
+    <dimen name="about_crash_checkbox_margin_start">30dp</dimen>
+    <dimen name="about_crash_checkbox_margin_end">30dp</dimen>
+    <dimen name="about_sign_out_button_padding">20dp</dimen>
+
+    <!-- Login -->
+    <dimen name="login_button_margin_top">10dp</dimen>
+    <dimen name="login_button_margin_bottom">20dp</dimen>
+    <dimen name="login_button_margin_start">20dp</dimen>
+    <dimen name="login_button_margin_end">20dp</dimen>
+    <dimen name="login_button_text_size">25sp</dimen>
+
+    <!-- Tweet List -->
+    <dimen name="tweet_list_margin_top">2dp</dimen>
+    <dimen name="tweet_list_progress_bar_margin_top">20dp</dimen>
+
+    <!-- MoPub native ad layout -->
+    <dimen name="mopub_element_spacing">10dp</dimen>
+    <dimen name="mopub_sponsored_text_size">25sp</dimen>
+    <dimen name="mopub_install_text_size">18sp</dimen>
+    <dimen name="mopub_install_button_padding_start">20dp</dimen>
+    <dimen name="mopub_install_button_padding_end">20dp</dimen>
+    <dimen name="mopub_install_button_padding_top">8dp</dimen>
+    <dimen name="mopub_install_button_padding_bottom">8dp</dimen>
+    <dimen name="mopub_install_button_margin_start">@dimen/mopub_element_spacing</dimen>
+    <dimen name="mopub_install_button_margin_end">@dimen/mopub_element_spacing</dimen>
+    <dimen name="mopub_install_button_margin_top">@dimen/mopub_element_spacing</dimen>
+    <dimen name="mopub_ad_unit_container_margin">@dimen/mopub_element_spacing</dimen>
+    <dimen name="mopub_ad_icon_image_width">40dp</dimen>
+    <dimen name="mopub_ad_icon_image_height">40dp</dimen>
+    <dimen name="mopub_ad_icon_image_margin">@dimen/mopub_element_spacing</dimen>
+    <dimen name="mopub_ad_app_property_text_size">25sp</dimen>
+    <dimen name="mopub_ad_app_property_margin_end">@dimen/mopub_element_spacing</dimen>
+    <dimen name="mopub_ad_text_margin_start">@dimen/mopub_element_spacing</dimen>
+    <dimen name="mopub_ad_text_margin_end">@dimen/mopub_element_spacing</dimen>
+    <dimen name="mopub_ad_text_margin_bottom">@dimen/mopub_element_spacing</dimen>
+    <dimen name="mopub_ad_text_size">17sp</dimen>
+    <dimen name="mopub_ad_main_image_margin">10dp</dimen>
+
+</resources>

@@ -1,0 +1,67 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url "https://maven.fabric.io/repo" }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+
+Properties props = new Properties()
+try {
+    props.load(file('crashlytics.properties').newDataInputStream())
+} catch (Exception ex) {
+    throw new GradleException("Missing crashlytics.properties, check the crashlytics.properties.sample file.");
+}
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.0.1"
+    defaultConfig {
+        applicationId "io.fabric.samples.cannonball"
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 4
+        versionName "0.9.7"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "CONSUMER_KEY", "\"${props.getProperty("twitterConsumerKey")}\""
+            buildConfigField "String", "CONSUMER_SECRET", "\"${props.getProperty("twitterConsumerSecret")}\""
+            buildConfigField "String", "MOPUB_AD_UNIT_ID", "\"${props.getProperty("mopubAdUnitId")}\""
+        }
+        release {
+            buildConfigField "String", "CONSUMER_KEY", "\"${props.getProperty("twitterConsumerKey")}\""
+            buildConfigField "String", "CONSUMER_SECRET", "\"${props.getProperty("twitterConsumerSecret")}\""
+            buildConfigField "String", "MOPUB_AD_UNIT_ID", "\"${props.getProperty("mopubAdUnitId")}\""
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+repositories {
+    jcenter()
+    maven { url "https://maven.fabric.io/repo" }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile('com.twitter.sdk.android:twitter:1.0.0@aar') {
+        transitive = true
+    }
+    compile('com.mopub.sdk.android:mopub:3.1.0@aar') {
+        transitive = true;
+    }
+    compile('com.crashlytics.sdk.android:crashlytics:2.+@aar') {
+        transitive = true;
+    }
+}

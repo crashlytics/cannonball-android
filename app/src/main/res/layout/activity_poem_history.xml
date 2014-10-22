@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/top_bar_left_side_button_margin_start"
+            android:contentDescription="@string/content_desc_back"
+            android:src="@drawable/ic_back"
+            android:tint="@color/green" />
+
+        <io.fabric.samples.cannonball.view.AvenirTextView
+            android:id="@+id/poem_history_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/poem_history_title"
+            android:textColor="@color/green"
+            android:textSize="@dimen/top_bar_text_size"
+             />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/poem_history_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/divider"
+        android:dividerHeight="@dimen/poem_list_divider_height" />
+
+    <LinearLayout
+        android:layout_width="@dimen/share_width_px"
+        android:layout_height="@dimen/share_height_px"
+        android:id="@+id/share_container"
+        android:orientation="vertical"
+        />
+
+</LinearLayout>
