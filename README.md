@@ -17,7 +17,7 @@ On this app you will find the following Fabric features:
 
 **Fabric initialization** 
 
-Can be found at [App onCreate method](http://)
+Can be found at [App onCreate method](https://github.com/twitterdev/cannonball-android/blob/master/app/src/main/java/io/fabric/samples/cannonball/App.java)
 
 **Twitter Kit**
 
