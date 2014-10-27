@@ -20,41 +20,38 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.crashlytics.android.Crashlytics;
 import com.twitter.sdk.android.Twitter;
-import com.twitter.sdk.android.core.TwitterSession;
 
-import io.fabric.samples.cannonball.App;
+import com.digits.sdk.android.Digits;
+
+import io.fabric.samples.cannonball.SessionRecorder;
+
+import com.twitter.sdk.android.core.Session;
+
 
 public class InitialActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final TwitterSession session = Twitter.getSessionManager().getActiveSession();
-        if (session != null) {
-            startThemeActivity(session);
+
+        final Session activeSession = SessionRecorder.recordInitialSessionState(
+                Twitter.getSessionManager().getActiveSession(),
+                Digits.getSessionManager().getActiveSession()
+        );
+
+        if (activeSession != null) {
+            startThemeActivity();
         } else {
             startLoginActivity();
         }
     }
 
-    private void startThemeActivity(TwitterSession session) {
-        final Intent intent = new Intent(this, ThemeChooserActivity.class);
-        startActivity(intent);
-        log("Splash: user with active session", true);
-        Crashlytics.setUserName(session.getUserName());
-        Crashlytics.setUserIdentifier(String.valueOf(session.getUserId()));
+    private void startThemeActivity() {
+        startActivity(new Intent(this, ThemeChooserActivity.class));
     }
 
     private void startLoginActivity() {
-        final Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-        log("Splash: anonymous user", false);
-    }
-
-    private void log(String log, boolean state) {
-        Crashlytics.log(log);
-        Crashlytics.setBool(App.CRASHLYTICS_KEY_SESSION_ACTIVATED, state);
+        startActivity(new Intent(this, LoginActivity.class));
     }
 }

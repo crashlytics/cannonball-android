@@ -23,13 +23,13 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 
 import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
+
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
 import java.io.File;
-
-import io.fabric.sdk.android.Fabric;
-
 
 /**
  * This class represents the Application and extends Application it is used to initiate the
@@ -103,7 +103,7 @@ public class App extends Application {
             Fabric.with(fabric);
         }
 
-        Crashlytics.setBool(App.CRASHLYTICS_KEY_CRASHES, areCrashesEnabled());
+        Crashlytics.setBool(CRASHLYTICS_KEY_CRASHES, areCrashesEnabled());
     }
 
     private void extractAvenir() {

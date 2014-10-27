@@ -34,8 +34,8 @@ import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
-import io.fabric.samples.cannonball.App;
 import io.fabric.samples.cannonball.R;
+import io.fabric.samples.cannonball.SessionRecorder;
 
 public class LoginActivity extends Activity {
 
@@ -60,9 +60,7 @@ public class LoginActivity extends Activity {
         twitterButton.setCallback(new Callback<TwitterSession>() {
             @Override
             public void success(Result<TwitterSession> result) {
-                Crashlytics.log("Login: twitter account activated");
-                Crashlytics.setUserIdentifier(String.valueOf(result.data.getUserId()));
-                Crashlytics.setBool(App.CRASHLYTICS_KEY_SESSION_ACTIVATED, true);
+                SessionRecorder.recordSessionActive("Login: twitter account active", result.data);
                 startThemeChooser();
             }
 
@@ -81,8 +79,7 @@ public class LoginActivity extends Activity {
         phoneButton.setCallback(new AuthCallback() {
             @Override
             public void success(DigitsSession digitsSession, String phoneNumber) {
-                Crashlytics.log("Login: digits session activated");
-                Crashlytics.setUserIdentifier(String.valueOf(digitsSession.getId()));
+                SessionRecorder.recordSessionActive("Login: digits account active", digitsSession);
                 startThemeChooser();
             }
 

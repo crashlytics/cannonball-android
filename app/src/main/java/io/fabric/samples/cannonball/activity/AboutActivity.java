@@ -29,6 +29,7 @@ import com.twitter.sdk.android.Twitter;
 
 import io.fabric.samples.cannonball.App;
 import io.fabric.samples.cannonball.R;
+import io.fabric.samples.cannonball.SessionRecorder;
 
 public class AboutActivity extends Activity {
 
@@ -49,9 +50,9 @@ public class AboutActivity extends Activity {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Crashlytics.log("About: deactivating accounts");
                 Twitter.getSessionManager().clearActiveSession();
                 Digits.getSessionManager().clearActiveSession();
+                SessionRecorder.recordSessionInactive("About: accounts deactivated");
 
                 Toast.makeText(getApplicationContext(), "All accounts are cleared",
                         Toast.LENGTH_SHORT).show();
