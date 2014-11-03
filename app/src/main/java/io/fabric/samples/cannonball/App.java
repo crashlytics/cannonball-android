@@ -93,15 +93,9 @@ public class App extends Application {
         super.onCreate();
         singleton = this;
         extractAvenir();
-        if (!Fabric.isInitialized()) {
-            authConfig
-                    = new TwitterAuthConfig(BuildConfig.CONSUMER_KEY, BuildConfig.CONSUMER_SECRET);
-            final Fabric fabric = new Fabric.Builder(this)
-                    .kits(new Crashlytics(), new Twitter(authConfig))
-                    .debuggable(true)
-                    .build();
-            Fabric.with(fabric);
-        }
+        authConfig
+                = new TwitterAuthConfig(BuildConfig.CONSUMER_KEY, BuildConfig.CONSUMER_SECRET);
+        Fabric.with(this, new Crashlytics(), new Twitter(authConfig));
 
         Crashlytics.setBool(App.CRASHLYTICS_KEY_CRASHES, areCrashesEnabled());
     }
