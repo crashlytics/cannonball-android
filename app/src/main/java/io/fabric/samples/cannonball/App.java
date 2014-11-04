@@ -23,6 +23,7 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 
 import com.crashlytics.android.Crashlytics;
+import com.mopub.common.MoPub;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
@@ -97,7 +98,7 @@ public class App extends Application {
             authConfig
                     = new TwitterAuthConfig(BuildConfig.CONSUMER_KEY, BuildConfig.CONSUMER_SECRET);
             final Fabric fabric = new Fabric.Builder(this)
-                    .kits(new Crashlytics(), new Twitter(authConfig))
+                    .kits(new Crashlytics(), new Twitter(authConfig), new MoPub())
                     .debuggable(true)
                     .build();
             Fabric.with(fabric);
