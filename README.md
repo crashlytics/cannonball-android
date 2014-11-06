@@ -79,6 +79,8 @@ The rules for contributing are available at `CONTRIBUTING.md` file.
 * [Andre Pinter](https://twitter.com/ndform)
 * [Chris Aniszczyk](https://twitter.com/cra)
 * [Eric Frohnhoefer](https://twitter.com/ericfrohnhoefer)
+* [Michael Furtak](https://twitter.com/MikeFurtak)
+* [Steve Wilber](http://twitter.com/stevewilber)
 
 ## License
 
