@@ -21,8 +21,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
-
-import com.crashlytics.android.Crashlytics;
+import android.util.Log;
 
 import io.fabric.samples.cannonball.db.PoemContract;
 
@@ -73,7 +72,7 @@ public class AppService extends IntentService {
                 );
                 break;
             default:
-                Crashlytics.log("AppService: Unexpected op: " + op);
+                Log.w(TAG, "Unexpected operation requested :" + op);
         }
     }
 

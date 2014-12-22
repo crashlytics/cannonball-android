@@ -16,22 +16,18 @@
 package io.fabric.samples.cannonball.activity;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.crashlytics.android.Crashlytics;
-import com.digits.sdk.android.Digits;
-import com.twitter.sdk.android.Twitter;
-
-import io.fabric.samples.cannonball.App;
 import io.fabric.samples.cannonball.R;
-import io.fabric.samples.cannonball.SessionRecorder;
 
 public class AboutActivity extends Activity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +36,8 @@ public class AboutActivity extends Activity {
         setUpViews();
     }
 
+
     private void setUpViews() {
-        setUpCrashSwitcher();
         setUpSignOut();
     }
 
@@ -50,26 +46,18 @@ public class AboutActivity extends Activity {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Twitter.getSessionManager().clearActiveSession();
-                Digits.getSessionManager().clearActiveSession();
-                SessionRecorder.recordSessionInactive("About: accounts deactivated");
-
                 Toast.makeText(getApplicationContext(), "All accounts are cleared",
                         Toast.LENGTH_SHORT).show();
             }
         });
-    }
 
-    private void setUpCrashSwitcher() {
-        final CheckBox cb = (CheckBox) findViewById(R.id.activate_crashes);
-        cb.setChecked(App.getInstance().areCrashesEnabled());
-        cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        final ImageView fabricImageView = (ImageView) findViewById(R.id.fabricImageView);
+        fabricImageView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                App.getInstance().setCrashesStatus(isChecked);
-                Toast.makeText(getApplicationContext(), "Crashes are " +
-                        (isChecked ? "ON" : "OFF"), Toast.LENGTH_SHORT).show();
-                Crashlytics.setBool(App.CRASHLYTICS_KEY_CRASHES, isChecked);
+            public void onClick(final View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("http://www.fabric.io"));
+                startActivity(browserIntent);
             }
         });
     }

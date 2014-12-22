@@ -21,7 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/about_scroll_view_margin"
-        android:layout_above="@+id/activate_crashes"
         android:layout_below="@+id/cannonball_logo">
 
         <RelativeLayout
@@ -42,7 +41,7 @@
                 android:textSize="@dimen/about_text_size" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/fabricImageView"
                 android:layout_width="@dimen/about_fabric_logo_width"
                 android:layout_height="@dimen/about_fabric_logo_height"
                 android:layout_below="@+id/instructions"
@@ -57,24 +56,11 @@
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
                 android:text="@string/about_learn_more"
-                android:textColor="@color/tw__blue_default"
+                android:textColor="@android:color/holo_blue_light"
                 android:textSize="@dimen/about_text_size" />
 
         </RelativeLayout>
     </ScrollView>
-
-    <CheckBox
-        android:id="@+id/activate_crashes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/deactivate_accounts"
-        android:layout_centerHorizontal="true"
-        android:layout_marginRight="@dimen/about_crash_checkbox_margin_end"
-        android:layout_marginEnd="@dimen/about_crash_checkbox_margin_end"
-        android:layout_marginLeft="@dimen/about_crash_checkbox_margin_start"
-        android:layout_marginStart="@dimen/about_crash_checkbox_margin_start"
-        android:text="@string/about_activate_crashes"
-        android:textColor="@color/green" />
 
     <io.fabric.samples.cannonball.view.AvenirTextView
         android:id="@+id/deactivate_accounts"

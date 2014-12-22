@@ -19,13 +19,14 @@ import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.widget.Button;
 
-import com.digits.sdk.android.DigitsAuthButton;
+//import com.digits.sdk.android.DigitsAuthButton;
 
 import io.fabric.samples.cannonball.App;
 import io.fabric.samples.cannonball.R;
 
-public class CannonballDigitsAuthButton extends DigitsAuthButton {
+public class CannonballDigitsAuthButton extends Button {
     public CannonballDigitsAuthButton(Context context) {
         super(context);
         init();

@@ -36,8 +36,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.crashlytics.android.Crashlytics;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -103,7 +101,6 @@ public class PoemBuilderActivity extends Activity {
         tick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Crashlytics.log("PoemBuilder: clicked to save poem");
                 countDown.cancel();
                 createPoem();
             }
@@ -162,7 +159,6 @@ public class PoemBuilderActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        Crashlytics.log("PoemBuilder: getting back, user cancelled the poem creation");
         super.onBackPressed();
         countDown.cancel();
     }
@@ -173,8 +169,6 @@ public class PoemBuilderActivity extends Activity {
             final SparseIntArray imgList = poemTheme.getImageList();
             // the line below seems weird, but relies on the fact that the index of SparseIntArray could be any integer
             final int poemImage = imgList.keyAt(imgList.indexOfValue(imgList.get(poemImagePager.getCurrentItem() + 1)));
-            Crashlytics.setString(App.CRASHLYTICS_KEY_POEM_TEXT, poemText);
-            Crashlytics.setInt(App.CRASHLYTICS_KEY_POEM_IMAGE, poemImage);
 
             AppService.createPoem(getApplicationContext(),
                     poemText,
@@ -185,7 +179,6 @@ public class PoemBuilderActivity extends Activity {
             Toast.makeText(getApplicationContext(),
                     getResources().getString(R.string.toast_wordless_poem), Toast.LENGTH_SHORT)
                     .show();
-            Crashlytics.log("PoemBuilder: User tried to create poem without words on it");
         }
     }
 
@@ -207,7 +200,6 @@ public class PoemBuilderActivity extends Activity {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getBooleanExtra(App.BROADCAST_POEM_CREATION_RESULT, false)) {
-                Crashlytics.log("PoemBuilder: poem saved, receiver called");
                 Toast.makeText(getApplicationContext(),
                         getResources().getString(R.string.toast_poem_created), Toast.LENGTH_SHORT)
                         .show();
@@ -215,7 +207,6 @@ public class PoemBuilderActivity extends Activity {
                 i.putExtra(ThemeChooserActivity.IS_NEW_POEM, true);
                 startActivity(i);
             } else {
-                Crashlytics.log("PoemBuilder: error when saving poem");
                 Toast.makeText(getApplicationContext(),
                         getResources().getString(R.string.toast_poem_error), Toast.LENGTH_SHORT)
                         .show();
@@ -236,8 +227,6 @@ public class PoemBuilderActivity extends Activity {
             wordView.setTag(w);
             wordsContainer.addView(wordView);
         }
-
-        Crashlytics.setInt(App.CRASHLYTICS_KEY_WORDBANK_COUNT, wordList.size());
     }
 
     private String getPoemText() {
@@ -271,15 +260,12 @@ public class PoemBuilderActivity extends Activity {
                 }
                 countdownText.setText("" + secsToFinish);
                 countdownView.setCurrentTime(secsToFinish);
-                Crashlytics.setLong(App.CRASHLYTICS_KEY_COUNTDOWN, secsToFinish);
             }
 
             public void onFinish() {
-                Crashlytics.log("PoemBuilder: countdown timer ended, saving poem...");
                 if (poemContainer.getChildCount() > 0) {
                     createPoem();
                 } else {
-                    Crashlytics.log("PoemBuilder: Countdown finishes counting, no words added");
                     onBackPressed();
                 }
 
@@ -372,7 +358,6 @@ public class PoemBuilderActivity extends Activity {
                             // To generate the crash, open the app and drag a word really quick
                             // from the Word Bank to the Poem (in less than TAP_RANGE ms)
                             viewId = to.getId();
-                            Crashlytics.log("PoemBuilder: An enabled crash will execute");
                         } else {
                             viewId = from.getId();
                         }

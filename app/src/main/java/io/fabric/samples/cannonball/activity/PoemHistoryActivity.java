@@ -29,9 +29,9 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,40 +43,28 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.crashlytics.android.Crashlytics;
-import com.mopub.nativeads.MoPubAdAdapter;
-import com.mopub.nativeads.MoPubNativeAdRenderer;
-import com.mopub.nativeads.ViewBinder;
-import com.twitter.sdk.android.tweetcomposer.TweetComposer;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 import io.fabric.samples.cannonball.App;
 import io.fabric.samples.cannonball.AppService;
-import io.fabric.samples.cannonball.BuildConfig;
 import io.fabric.samples.cannonball.R;
 import io.fabric.samples.cannonball.db.PoemContract;
 import io.fabric.samples.cannonball.model.Theme;
 import io.fabric.samples.cannonball.view.AvenirTextView;
 import io.fabric.samples.cannonball.view.ImageLoader;
-import io.fabric.sdk.android.services.concurrency.AsyncTask;
-
 
 public class PoemHistoryActivity extends Activity implements LoaderManager.LoaderCallbacks<Cursor> {
     private static final String TAG = "PoemHistory";
-    private static final String MY_AD_UNIT_ID = BuildConfig.MOPUB_AD_UNIT_ID;
     private PoemCursorAdapter adapter;
     private OnShareClickListener shareListener;
     private OnDeleteClickListener deleteListener;
-    private MoPubAdAdapter moPubAdAdapter;
     private PoemDeletedReceiver poemDeletedReceiver;
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Crashlytics.log("PoemHistory: getting back to ThemeChooser");
         if (getIntent().getBooleanExtra(ThemeChooserActivity.IS_NEW_POEM, false)) {
             final Intent intent = new Intent(getApplicationContext(), ThemeChooserActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -110,19 +98,7 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
                 null,
                 CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
 
-        // MoPub integration
-        final ViewBinder mopubViewBinder = new ViewBinder.Builder(R.layout.native_ad_layout)
-                .mainImageId(R.id.native_ad_main_image)
-                .iconImageId(R.id.native_ad_icon_image)
-                .titleId(R.id.native_ad_title)
-                .textId(R.id.native_ad_text)
-                .build();
-
-        final MoPubNativeAdRenderer adRenderer = new MoPubNativeAdRenderer(mopubViewBinder);
-        moPubAdAdapter = new MoPubAdAdapter(this, adapter);
-        moPubAdAdapter.registerAdRenderer(adRenderer);
-
-        poemsList.setAdapter(moPubAdAdapter);
+        poemsList.setAdapter(adapter);
     }
 
     private void setUpBack() {
@@ -138,7 +114,6 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
     @Override
     protected void onResume() {
         super.onResume();
-        moPubAdAdapter.loadAds(MY_AD_UNIT_ID);
 
         final IntentFilter intentFilter = new IntentFilter(App.BROADCAST_POEM_DELETION);
         poemDeletedReceiver = new PoemDeletedReceiver();
@@ -149,12 +124,6 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
     protected void onPause() {
         super.onPause();
         LocalBroadcastManager.getInstance(this).unregisterReceiver(poemDeletedReceiver);
-    }
-
-    @Override
-    protected void onDestroy() {
-        moPubAdAdapter.destroy();
-        super.onDestroy();
     }
 
     class PoemCursorAdapter extends CursorAdapter {
@@ -206,8 +175,6 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
     class OnShareClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            Crashlytics.log("PoemHistory: clicked to share poem with id: " + v.getTag());
-
             final RelativeLayout originalPoem = (RelativeLayout) v.getParent();
 
             final LinearLayout shareContainer = (LinearLayout) findViewById(R.id.share_container);
@@ -256,7 +223,6 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
     class OnDeleteClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            Crashlytics.log("PoemHistory: clicked to delete poem with id: " + v.getTag());
             AppService.deletePoem(getApplicationContext(), (Integer) v.getTag());
         }
     }
@@ -287,16 +253,8 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
                                 = ((TextView) poem.findViewById(R.id.poem_theme)).getText();
 
                         final Uri imageUri = Uri.parse(picFile.getAbsolutePath());
-                        final TweetComposer.Builder builder
-                                = new TweetComposer.Builder(PoemHistoryActivity.this)
-                                .text(getApplicationContext().getResources()
-                                        .getString(R.string.share_poem_tweet_text) + " " + hashtag)
-                                .image(imageUri);
-                        builder.show();
-
                         result = true;
                     } else {
-                        Crashlytics.log(Log.ERROR, TAG, "Error when trying to save Bitmap of poem");
                         Toast.makeText(getApplicationContext(),
                                 getResources().getString(R.string.toast_share_error),
                                 Toast.LENGTH_SHORT).show();
@@ -306,7 +264,6 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
                     Toast.makeText(getApplicationContext(),
                             getResources().getString(R.string.toast_share_error),
                             Toast.LENGTH_SHORT).show();
-                    Crashlytics.logException(e);
                     e.printStackTrace();
                 }
 
@@ -315,7 +272,6 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
                 Toast.makeText(getApplicationContext(),
                         getResources().getString(R.string.toast_share_error),
                         Toast.LENGTH_SHORT).show();
-                Crashlytics.log(Log.ERROR, TAG, "External Storage not writable");
             }
 
             return result;
@@ -327,12 +283,10 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getBooleanExtra(App.BROADCAST_POEM_DELETION_RESULT, false)) {
-                Crashlytics.log("PoemBuilder: poem removed, receiver called");
                 Toast.makeText(getApplicationContext(),
                         getResources().getString(R.string.toast_poem_deleted),
                         Toast.LENGTH_SHORT).show();
             } else {
-                Crashlytics.log("PoemHistory: error when removing poem");
                 Toast.makeText(getApplicationContext(),
                         getResources().getString(R.string.toast_poem_delete_error),
                         Toast.LENGTH_SHORT).show();

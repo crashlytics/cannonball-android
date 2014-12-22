@@ -23,12 +23,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.crashlytics.android.Crashlytics;
-import com.twitter.sdk.android.Twitter;
-
-import io.fabric.samples.cannonball.App;
 import io.fabric.samples.cannonball.R;
 import io.fabric.samples.cannonball.model.Theme;
 import io.fabric.samples.cannonball.view.ThemeAdapter;
@@ -55,7 +50,6 @@ public class ThemeChooserActivity extends Activity {
         icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Crashlytics.log("ThemeChooser: clicked About button");
                 final Intent intent = new Intent(ThemeChooserActivity.this, AboutActivity.class);
                 startActivity(intent);
             }
@@ -67,18 +61,7 @@ public class ThemeChooserActivity extends Activity {
         popular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Crashlytics.log("ThemeChooser: clicked Popular button");
-                // Crashlytics:
-                // A Crash will happen if you try to access Popular poems page without having an
-                // activated account
                 Intent intent = new Intent(ThemeChooserActivity.this, PoemPopularActivity.class);
-                if (Twitter.getSessionManager().getActiveSession() == null &&
-                        !App.getInstance().areCrashesEnabled()) {
-                    Crashlytics.log("ThemeChooser: An enabled crash will execute");
-                    Toast.makeText(ThemeChooserActivity.this, getResources().getString(R.string
-                            .you_need_twitter), Toast.LENGTH_LONG).show();
-                    intent = new Intent(ThemeChooserActivity.this, LoginActivity.class);
-                }
                 startActivity(intent);
             }
         });
@@ -89,7 +72,6 @@ public class ThemeChooserActivity extends Activity {
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Crashlytics.log("ThemeChooser: clicked History button");
                 final Intent intent = new Intent(ThemeChooserActivity.this,
                         PoemHistoryActivity.class);
                 intent.putExtra(IS_NEW_POEM, false);
@@ -105,8 +87,6 @@ public class ThemeChooserActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final Theme theme = Theme.values()[position];
-                Crashlytics.log("ThemeChooser: clicked on Theme: " + theme.getDisplayName());
-                Crashlytics.setString(App.CRASHLYTICS_KEY_THEME, theme.getDisplayName());
                 final Intent intent = new Intent(getBaseContext(), PoemBuilderActivity.class);
                 intent.putExtra(PoemBuilderActivity.KEY_THEME, theme);
                 startActivity(intent);

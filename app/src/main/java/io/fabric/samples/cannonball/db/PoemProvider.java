@@ -24,8 +24,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
-import com.crashlytics.android.Crashlytics;
-
 public class PoemProvider extends ContentProvider {
     private DbHelper dbHelper;
 
@@ -55,7 +53,6 @@ public class PoemProvider extends ContentProvider {
             getContext().getContentResolver().notifyChange(uri, null);
             return ContentUris.withAppendedId(uri, id);
         } else {
-            Crashlytics.log("PoemProvider: not able to insert a poem in Database");
             return null;
         }
     }

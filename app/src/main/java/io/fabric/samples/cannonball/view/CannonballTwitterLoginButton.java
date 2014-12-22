@@ -17,13 +17,12 @@ package io.fabric.samples.cannonball.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
-
-import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+import android.widget.Button;
 
 import io.fabric.samples.cannonball.App;
 import io.fabric.samples.cannonball.R;
 
-public class CannonballTwitterLoginButton extends TwitterLoginButton {
+public class CannonballTwitterLoginButton extends Button {
     public CannonballTwitterLoginButton(Context context) {
         super(context);
         init();
@@ -40,7 +39,7 @@ public class CannonballTwitterLoginButton extends TwitterLoginButton {
     }
 
     private void init() {
-        if (isInEditMode()){
+        if (isInEditMode()) {
             return;
         }
         setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable
@@ -48,7 +47,7 @@ public class CannonballTwitterLoginButton extends TwitterLoginButton {
         setBackgroundResource(R.drawable.sign_up_button);
         setTextSize(20);
         setPadding(30, 0, 10, 0);
-        setTextColor(getResources().getColor(R.color.tw__blue_default));
+        setTextColor(getResources().getColor(R.color.green));
         setTypeface(App.getInstance().getTypeface());
     }
 }

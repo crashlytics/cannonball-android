@@ -20,27 +20,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.crashlytics.android.Crashlytics;
-import com.digits.sdk.android.AuthCallback;
-import com.digits.sdk.android.DigitsAuthButton;
-import com.digits.sdk.android.DigitsException;
-import com.digits.sdk.android.DigitsSession;
-import com.twitter.sdk.android.core.Callback;
-import com.twitter.sdk.android.core.Result;
-import com.twitter.sdk.android.core.TwitterException;
-import com.twitter.sdk.android.core.TwitterSession;
-import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
 import io.fabric.samples.cannonball.R;
-import io.fabric.samples.cannonball.SessionRecorder;
 
 public class LoginActivity extends Activity {
 
-    private TwitterLoginButton twitterButton;
-    private DigitsAuthButton phoneButton;
+    private Button twitterButton;
+    private Button phoneButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,41 +44,11 @@ public class LoginActivity extends Activity {
     }
 
     private void setUpTwitterButton() {
-        twitterButton = (TwitterLoginButton) findViewById(R.id.twitter_button);
-        twitterButton.setCallback(new Callback<TwitterSession>() {
-            @Override
-            public void success(Result<TwitterSession> result) {
-                SessionRecorder.recordSessionActive("Login: twitter account active", result.data);
-                startThemeChooser();
-            }
-
-            @Override
-            public void failure(TwitterException exception) {
-                Toast.makeText(getApplicationContext(),
-                        getResources().getString(R.string.toast_twitter_signin_fail),
-                        Toast.LENGTH_SHORT).show();
-                Crashlytics.logException(exception);
-            }
-        });
+        twitterButton = (Button) findViewById(R.id.twitter_button);
     }
 
     private void setUpDigitsButton() {
-        phoneButton = (DigitsAuthButton) findViewById(R.id.phone_button);
-        phoneButton.setCallback(new AuthCallback() {
-            @Override
-            public void success(DigitsSession digitsSession, String phoneNumber) {
-                SessionRecorder.recordSessionActive("Login: digits account active", digitsSession);
-                startThemeChooser();
-            }
-
-            @Override
-            public void failure(DigitsException e) {
-                Toast.makeText(getApplicationContext(),
-                        getResources().getString(R.string.toast_twitter_digits_fail),
-                        Toast.LENGTH_SHORT).show();
-                Crashlytics.logException(e);
-            }
-        });
+        phoneButton = (Button) findViewById(R.id.digit_button);
     }
 
     private void setUpSkip() {
@@ -99,7 +57,6 @@ public class LoginActivity extends Activity {
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Crashlytics.log("Login: skipped login");
                 startThemeChooser();
                 overridePendingTransition(R.anim.slide_down, R.anim.slide_up);
             }
@@ -109,7 +66,6 @@ public class LoginActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        twitterButton.onActivityResult(requestCode, resultCode, data);
     }
 
     private void startThemeChooser() {
