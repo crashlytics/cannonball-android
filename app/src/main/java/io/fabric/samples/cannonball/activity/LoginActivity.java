@@ -76,6 +76,7 @@ public class LoginActivity extends Activity {
 
     private void setUpDigitsButton() {
         phoneButton = (DigitsAuthButton) findViewById(R.id.phone_button);
+        phoneButton.setAuthTheme(R.style.AppTheme);
         phoneButton.setCallback(new AuthCallback() {
             @Override
             public void success(DigitsSession digitsSession, String phoneNumber) {
