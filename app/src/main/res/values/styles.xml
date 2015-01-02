@@ -4,6 +4,8 @@
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@color/background_beige</item>
+        <item name="dgts__accentColor">@color/green</item>
+        <item name="android:textColorPrimary">@color/green</item>
     </style>
 
     <style name="AboutTheme" parent="android:style/Theme.NoTitleBar.Fullscreen">

@@ -1,7 +1,7 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url "https://maven.fabric.io/repo" }
+        maven { url 'https://maven.fabric.io/public' }
     }
 
     dependencies {
@@ -41,7 +41,7 @@ android {
             buildConfigField "String", "CONSUMER_KEY", "\"${props.getProperty("twitterConsumerKey")}\""
             buildConfigField "String", "CONSUMER_SECRET", "\"${props.getProperty("twitterConsumerSecret")}\""
             buildConfigField "String", "MOPUB_AD_UNIT_ID", "\"${props.getProperty("mopubAdUnitId")}\""
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -51,11 +51,12 @@ android {
 repositories {
     jcenter()
     maven { url "https://maven.fabric.io/repo" }
+    maven { url 'https://maven.fabric.io/public' }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile('com.twitter.sdk.android:twitter:1.0.0@aar') {
+    compile('com.twitter.sdk.android:twitter:1.1.1@aar') {
         transitive = true
     }
     compile('com.mopub.sdk.android:mopub:3.1.0@aar') {
