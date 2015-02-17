@@ -44,7 +44,7 @@
             android:theme="@style/AppTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.ThemeChooser" />
+                android:value=".activity.ThemeChooserActivity" />
         </activity>
         <activity
             android:name=".activity.PoemHistoryActivity"
@@ -54,7 +54,7 @@
             android:theme="@style/AppTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.ThemeChooser" />
+                android:value=".activity.ThemeChooserActivity" />
         </activity>
         <activity
             android:name=".activity.PoemPopularActivity"
@@ -64,7 +64,7 @@
             android:theme="@style/AppTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.ThemeChooser" />
+                android:value=".activity.ThemeChooserActivity" />
         </activity>
 
         <provider
@@ -80,16 +80,16 @@
 
         <activity
             android:name="com.mopub.mobileads.MoPubActivity"
-            android:configChanges="keyboardHidden|orientation" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name="com.mopub.mobileads.MraidActivity"
-            android:configChanges="keyboardHidden|orientation" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name="com.mopub.common.MoPubBrowser"
-            android:configChanges="keyboardHidden|orientation" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
-            android:configChanges="keyboardHidden|orientation" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name=".activity.AboutActivity"
             android:label="@string/title_activity_about"
@@ -99,7 +99,7 @@
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.ThemeChooser" />
+                android:value=".activity.ThemeChooserActivity" />
         </activity>
     </application>
 
