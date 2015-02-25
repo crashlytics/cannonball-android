@@ -286,7 +286,8 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
                         final CharSequence hashtag
                                 = ((TextView) poem.findViewById(R.id.poem_theme)).getText();
 
-                        final Uri imageUri = Uri.parse(picFile.getAbsolutePath());
+                        // create Uri from local image file://<absolute path>
+                        final Uri imageUri = Uri.fromFile(picFile);
                         final TweetComposer.Builder builder
                                 = new TweetComposer.Builder(PoemHistoryActivity.this)
                                 .text(getApplicationContext().getResources()
