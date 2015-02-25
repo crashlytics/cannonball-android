@@ -81,9 +81,10 @@ The rules for contributing are available at `CONTRIBUTING.md` file.
 * [Eric Frohnhoefer](https://twitter.com/ericfrohnhoefer)
 * [Michael Furtak](https://twitter.com/MikeFurtak)
 * [Steve Wilber](http://twitter.com/stevewilber)
+* [Dalton Hubble](https://twitter.com/dghubble)
 
 ## License
 
-Copyright 2014 Twitter, Inc and other contributors.
+Copyright 2015 Twitter, Inc and other contributors.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
