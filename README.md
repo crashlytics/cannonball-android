@@ -22,8 +22,7 @@ Can be found at [App onCreate method](https://github.com/twitterdev/cannonball-a
 **Twitter Kit**
 
 * [Sign in with Twitter](https://dev.twitter.com/twitter-kit/android/twitter-login) at [LoginActivity](https://github.com/twitterdev/cannonball-android/blob/master/app/src/main/java/io/fabric/samples/cannonball/activity/LoginActivity.java)
-* [API requests](https://dev.twitter.com/twitter-kit/android/api) at [PoemPopularActivity](https://github.com/twitterdev/cannonball-android/blob/master/app/src/main/java/io/fabric/samples/cannonball/activity/PoemPopularActivity.java)
-* [Embedded Tweets](https://dev.twitter.com/twitter-kit/android/tweetui) at [PoemPopularActivity](https://github.com/twitterdev/cannonball-android/blob/master/app/src/main/java/io/fabric/samples/cannonball/activity/PoemPopularActivity.java)
+* [Search Embedded Timeline](https://dev.twitter.com/twitter-kit/android/show-timelines) at [PoemPopularActivity](https://github.com/twitterdev/cannonball-android/blob/master/app/src/main/java/io/fabric/samples/cannonball/activity/PoemPopularActivity.java)
 * [Share](https://dev.twitter.com/twitter-kit/android/compose) at [PoemHistoryActivity](https://github.com/twitterdev/cannonball-android/blob/master/app/src/main/java/io/fabric/samples/cannonball/activity/PoemHistoryActivity.java)
 * [Digits](https://dev.twitter.com/twitter-kit/android/digits) at [LoginActivity](https://github.com/twitterdev/cannonball-android/blob/master/app/src/main/java/io/fabric/samples/cannonball/activity/LoginActivity.java)
 
