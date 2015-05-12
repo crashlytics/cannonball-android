@@ -20,25 +20,12 @@ import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.AbsListView;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
-import com.twitter.sdk.android.Twitter;
-import com.twitter.sdk.android.core.Callback;
-import com.twitter.sdk.android.core.Result;
-import com.twitter.sdk.android.core.TwitterException;
-import com.twitter.sdk.android.core.models.Search;
-import com.twitter.sdk.android.core.models.Tweet;
-import com.twitter.sdk.android.core.services.SearchService;
 import com.twitter.sdk.android.tweetui.SearchTimeline;
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
-import com.twitter.sdk.android.tweetui.TweetViewAdapter;
 
-import java.util.List;
-
-import io.fabric.samples.cannonball.App;
 import io.fabric.samples.cannonball.R;
 
 /**
@@ -47,11 +34,8 @@ import io.fabric.samples.cannonball.R;
 public class PoemPopularActivity extends ListActivity {
 
     private static final String TAG = "PoemPopularActivity";
-    private static final int SEARCH_COUNT = 20;
-    private static final String SEARCH_RESULT_TYPE = "recent";
     private static final String SEARCH_QUERY = "#cannonballapp AND pic.twitter.com AND " +
             "(#adventure OR #nature OR #romance OR #mystery)";
-    private long maxId;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
