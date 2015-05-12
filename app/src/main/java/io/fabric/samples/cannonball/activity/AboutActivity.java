@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.answers.Answers;
 import com.digits.sdk.android.Digits;
 import com.twitter.sdk.android.Twitter;
 
@@ -53,6 +54,7 @@ public class AboutActivity extends Activity {
                 Twitter.getSessionManager().clearActiveSession();
                 Digits.getSessionManager().clearActiveSession();
                 SessionRecorder.recordSessionInactive("About: accounts deactivated");
+                Answers.getInstance().logEvent("signed out");
 
                 Toast.makeText(getApplicationContext(), "All accounts are cleared",
                         Toast.LENGTH_SHORT).show();
