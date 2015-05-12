@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.answers.Answers;
 import com.digits.sdk.android.AuthCallback;
 import com.digits.sdk.android.DigitsAuthButton;
 import com.digits.sdk.android.DigitsException;
@@ -61,11 +62,13 @@ public class LoginActivity extends Activity {
             @Override
             public void success(Result<TwitterSession> result) {
                 SessionRecorder.recordSessionActive("Login: twitter account active", result.data);
+                Answers.getInstance().logEvent("login:twitter:success");
                 startThemeChooser();
             }
 
             @Override
             public void failure(TwitterException exception) {
+                Answers.getInstance().logEvent("login:twitter:failure");
                 Toast.makeText(getApplicationContext(),
                         getResources().getString(R.string.toast_twitter_signin_fail),
                         Toast.LENGTH_SHORT).show();
@@ -81,11 +84,13 @@ public class LoginActivity extends Activity {
             @Override
             public void success(DigitsSession digitsSession, String phoneNumber) {
                 SessionRecorder.recordSessionActive("Login: digits account active", digitsSession);
+                Answers.getInstance().logEvent("login:digits:success");
                 startThemeChooser();
             }
 
             @Override
             public void failure(DigitsException e) {
+                Answers.getInstance().logEvent("login:digits:failure");
                 Toast.makeText(getApplicationContext(),
                         getResources().getString(R.string.toast_twitter_digits_fail),
                         Toast.LENGTH_SHORT).show();
@@ -101,6 +106,7 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Crashlytics.log("Login: skipped login");
+                Answers.getInstance().logEvent("skipped login");
                 startThemeChooser();
                 overridePendingTransition(R.anim.slide_down, R.anim.slide_up);
             }
