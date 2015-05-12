@@ -68,17 +68,7 @@ public class ThemeChooserActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Crashlytics.log("ThemeChooser: clicked Popular button");
-                // Crashlytics:
-                // A Crash will happen if you try to access Popular poems page without having an
-                // activated account
                 Intent intent = new Intent(ThemeChooserActivity.this, PoemPopularActivity.class);
-                if (Twitter.getSessionManager().getActiveSession() == null &&
-                        !App.getInstance().areCrashesEnabled()) {
-                    Crashlytics.log("ThemeChooser: An enabled crash will execute");
-                    Toast.makeText(ThemeChooserActivity.this, getResources().getString(R.string
-                            .you_need_twitter), Toast.LENGTH_LONG).show();
-                    intent = new Intent(ThemeChooserActivity.this, LoginActivity.class);
-                }
                 startActivity(intent);
             }
         });
