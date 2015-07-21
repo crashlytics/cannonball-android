@@ -23,6 +23,7 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 
 import com.crashlytics.android.Crashlytics;
+import com.digits.sdk.android.Digits;
 import com.mopub.common.MoPub;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
@@ -95,7 +96,7 @@ public class App extends Application {
         extractAvenir();
         authConfig
                 = new TwitterAuthConfig(BuildConfig.CONSUMER_KEY, BuildConfig.CONSUMER_SECRET);
-        Fabric.with(this, new Crashlytics(), new Twitter(authConfig), new MoPub());
+        Fabric.with(this, new Crashlytics(), new Digits(), new Twitter(authConfig), new MoPub());
 
         Crashlytics.setBool(CRASHLYTICS_KEY_CRASHES, areCrashesEnabled());
     }

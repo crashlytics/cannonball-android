@@ -56,16 +56,16 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile('com.twitter.sdk.android:twitter:1.6.0@aar') {
+    compile('com.twitter.sdk.android:twitter:1.6.1@aar') {
         transitive = true
     }
     compile('com.mopub.sdk.android:mopub:3.8.0@aar') {
         transitive = true;
     }
-    compile('com.crashlytics.sdk.android:crashlytics:2.3.2@aar') {
+    compile('com.crashlytics.sdk.android:crashlytics:2.4.0@aar') {
         transitive = true;
     }
-    compile('com.digits.sdk.android:digits:1.6.0@aar') {
+    compile('com.digits.sdk.android:digits:1.6.1@aar') {
         transitive = true;
     }
 }
