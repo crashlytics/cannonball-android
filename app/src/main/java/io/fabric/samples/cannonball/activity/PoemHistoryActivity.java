@@ -46,6 +46,7 @@ import android.widget.Toast;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.answers.Answers;
 import com.mopub.nativeads.MoPubAdAdapter;
+import com.mopub.nativeads.MoPubNativeAdPositioning;
 import com.mopub.nativeads.MoPubNativeAdRenderer;
 import com.mopub.nativeads.ViewBinder;
 import com.twitter.sdk.android.tweetcomposer.TweetComposer;
@@ -119,8 +120,10 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
                 .textId(R.id.native_ad_text)
                 .build();
 
+        MoPubNativeAdPositioning.MoPubServerPositioning adPositioning =
+                MoPubNativeAdPositioning.serverPositioning();
         final MoPubNativeAdRenderer adRenderer = new MoPubNativeAdRenderer(mopubViewBinder);
-        moPubAdAdapter = new MoPubAdAdapter(this, adapter);
+        moPubAdAdapter = new MoPubAdAdapter(this, adapter, adPositioning);
         moPubAdAdapter.registerAdRenderer(adRenderer);
 
         poemsList.setAdapter(moPubAdAdapter);
