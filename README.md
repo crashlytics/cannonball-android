@@ -56,7 +56,7 @@ If you want to run the app locally, do the following:
 5. Add that id to `app/crashlytics.properties`
 6. Run it
 
-See [how to integrate the SDK](https://dev.twitter.com/twitter-kit/android/integrate) if you need more help.
+See [how to integrate the SDK](https://docs.fabric.io/android/fabric/integration.html) if you need more help.
 
 ## Get support
 
