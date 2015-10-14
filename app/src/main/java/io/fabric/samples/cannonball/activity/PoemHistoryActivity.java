@@ -45,6 +45,8 @@ import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.answers.Answers;
+import com.crashlytics.android.answers.CustomEvent;
+import com.crashlytics.android.answers.ShareEvent;
 import com.mopub.nativeads.MoPubAdAdapter;
 import com.mopub.nativeads.MoPubNativeAdPositioning;
 import com.mopub.nativeads.MoPubNativeAdRenderer;
@@ -211,7 +213,7 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
         @Override
         public void onClick(View v) {
             Crashlytics.log("PoemHistory: clicked to share poem with id: " + v.getTag());
-            Answers.getInstance().logEvent("shared poem");
+
 
             final RelativeLayout originalPoem = (RelativeLayout) v.getParent();
 
@@ -254,6 +256,9 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
             poem.setTag(v.getTag());
             shareContainer.addView(poem);
 
+            Answers.getInstance().logShare(new ShareEvent()
+                    .putMethod("Twitter").putContentName("Poem").putContentType("tweet with image"));
+
             new SharePoemTask().execute(poem);
         }
     }
@@ -262,7 +267,7 @@ public class PoemHistoryActivity extends Activity implements LoaderManager.Loade
         @Override
         public void onClick(View v) {
             Crashlytics.log("PoemHistory: clicked to delete poem with id: " + v.getTag());
-            Answers.getInstance().logEvent("removed poem");
+            Answers.getInstance().logCustom(new CustomEvent("removed poem"));
             AppService.deletePoem(getApplicationContext(), (Integer) v.getTag());
         }
     }

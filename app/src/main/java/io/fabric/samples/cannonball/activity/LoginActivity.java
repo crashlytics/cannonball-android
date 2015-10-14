@@ -25,6 +25,8 @@ import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.answers.Answers;
+import com.crashlytics.android.answers.CustomEvent;
+import com.crashlytics.android.answers.LoginEvent;
 import com.digits.sdk.android.AuthCallback;
 import com.digits.sdk.android.DigitsAuthButton;
 import com.digits.sdk.android.DigitsException;
@@ -62,13 +64,13 @@ public class LoginActivity extends Activity {
             @Override
             public void success(Result<TwitterSession> result) {
                 SessionRecorder.recordSessionActive("Login: twitter account active", result.data);
-                Answers.getInstance().logEvent("login:twitter:success");
+                Answers.getInstance().logLogin(new LoginEvent().putMethod("Twitter").putSuccess(true));
                 startThemeChooser();
             }
 
             @Override
             public void failure(TwitterException exception) {
-                Answers.getInstance().logEvent("login:twitter:failure");
+                Answers.getInstance().logLogin(new LoginEvent().putMethod("Twitter").putSuccess(false));
                 Toast.makeText(getApplicationContext(),
                         getResources().getString(R.string.toast_twitter_signin_fail),
                         Toast.LENGTH_SHORT).show();
@@ -84,13 +86,13 @@ public class LoginActivity extends Activity {
             @Override
             public void success(DigitsSession digitsSession, String phoneNumber) {
                 SessionRecorder.recordSessionActive("Login: digits account active", digitsSession);
-                Answers.getInstance().logEvent("login:digits:success");
+                Answers.getInstance().logLogin(new LoginEvent().putMethod("Digits").putSuccess(true));
                 startThemeChooser();
             }
 
             @Override
             public void failure(DigitsException e) {
-                Answers.getInstance().logEvent("login:digits:failure");
+                Answers.getInstance().logLogin(new LoginEvent().putMethod("Digits").putSuccess(false));
                 Toast.makeText(getApplicationContext(),
                         getResources().getString(R.string.toast_twitter_digits_fail),
                         Toast.LENGTH_SHORT).show();
@@ -106,7 +108,7 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Crashlytics.log("Login: skipped login");
-                Answers.getInstance().logEvent("skipped login");
+                Answers.getInstance().logCustom(new CustomEvent("skipped login"));
                 startThemeChooser();
                 overridePendingTransition(R.anim.slide_down, R.anim.slide_up);
             }

@@ -23,12 +23,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.answers.Answers;
-import com.crashlytics.android.answers.EventAttributes;
-import com.twitter.sdk.android.Twitter;
+import com.crashlytics.android.answers.CustomEvent;
 
 import io.fabric.samples.cannonball.App;
 import io.fabric.samples.cannonball.R;
@@ -58,7 +56,7 @@ public class ThemeChooserActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Crashlytics.log("ThemeChooser: clicked About button");
-                Answers.getInstance().logEvent("clicked about");
+                Answers.getInstance().logCustom(new CustomEvent("clicked about"));
                 final Intent intent = new Intent(ThemeChooserActivity.this, AboutActivity.class);
                 startActivity(intent);
             }
@@ -71,7 +69,7 @@ public class ThemeChooserActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Crashlytics.log("ThemeChooser: clicked Popular button");
-                Answers.getInstance().logEvent("clicked popular");
+                Answers.getInstance().logCustom(new CustomEvent("clicked popular"));
                 Intent intent = new Intent(ThemeChooserActivity.this, PoemPopularActivity.class);
                 startActivity(intent);
             }
@@ -84,7 +82,7 @@ public class ThemeChooserActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Crashlytics.log("ThemeChooser: clicked History button");
-                Answers.getInstance().logEvent("clicked history");
+                Answers.getInstance().logCustom(new CustomEvent("clicked history"));
                 final Intent intent = new Intent(ThemeChooserActivity.this,
                         PoemHistoryActivity.class);
                 intent.putExtra(IS_NEW_POEM, false);
@@ -102,7 +100,7 @@ public class ThemeChooserActivity extends Activity {
                 final Theme theme = Theme.values()[position];
                 Crashlytics.log("ThemeChooser: clicked on Theme: " + theme.getDisplayName());
                 Crashlytics.setString(App.CRASHLYTICS_KEY_THEME, theme.getDisplayName());
-                Answers.getInstance().logEvent("clicked build poem", new EventAttributes().put("theme", theme.getDisplayName()));
+                Answers.getInstance().logCustom(new CustomEvent("clicked build poem").putCustomAttribute("theme", theme.getDisplayName()));
                 final Intent intent = new Intent(getBaseContext(), PoemBuilderActivity.class);
                 intent.putExtra(PoemBuilderActivity.KEY_THEME, theme);
                 startActivity(intent);

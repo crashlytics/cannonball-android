@@ -62,7 +62,7 @@ dependencies {
     compile('com.mopub.sdk.android:mopub:3.8.0@aar') {
         transitive = true;
     }
-    compile('com.crashlytics.sdk.android:crashlytics:2.4.0@aar') {
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true;
     }
     compile('com.digits.sdk.android:digits:1.6.1@aar') {

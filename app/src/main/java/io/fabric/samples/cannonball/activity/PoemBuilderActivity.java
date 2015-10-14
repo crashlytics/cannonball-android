@@ -38,7 +38,7 @@ import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.answers.Answers;
-import com.crashlytics.android.answers.EventAttributes;
+import com.crashlytics.android.answers.CustomEvent;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -119,7 +119,7 @@ public class PoemBuilderActivity extends Activity {
             @Override
             public void onClick(View v) {
                 shuffleWords();
-                Answers.getInstance().logEvent("shuffled words");
+                Answers.getInstance().logCustom(new CustomEvent("shuffled words"));
             }
         });
     }
@@ -166,7 +166,7 @@ public class PoemBuilderActivity extends Activity {
     @Override
     public void onBackPressed() {
         Crashlytics.log("PoemBuilder: getting back, user cancelled the poem creation");
-        Answers.getInstance().logEvent("gave up building a poem");
+        Answers.getInstance().logCustom(new CustomEvent("gave up building a poem"));
         super.onBackPressed();
         countDown.cancel();
     }
@@ -180,11 +180,10 @@ public class PoemBuilderActivity extends Activity {
             Crashlytics.setString(App.CRASHLYTICS_KEY_POEM_TEXT, poemText);
             Crashlytics.setInt(App.CRASHLYTICS_KEY_POEM_IMAGE, poemImage);
 
-            Answers.getInstance().logEvent("clicked save poem",
-                    new EventAttributes()
-                            .put("poem size", poemText.length())
-                            .put("poem image", poemImage)
-                            .put("poem theme", poemTheme.getDisplayName()));
+            Answers.getInstance().logCustom(new CustomEvent("clicked save poem")
+                    .putCustomAttribute("poem size", poemText.length())
+                    .putCustomAttribute("poem theme", poemTheme.getDisplayName())
+                    .putCustomAttribute("poem image", poemImage));
 
             AppService.createPoem(getApplicationContext(),
                     poemText,
