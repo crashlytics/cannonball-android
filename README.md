@@ -48,10 +48,10 @@ If you want to run the app locally, do the following:
     1. Sign up at fabric.io
 	2. Install Fabric IDE plugin
 	3. Rename `app/crashlytics.properties.sample` to `app/crashlytics.properties`
-    4. Fill in your keys there
+    4. Fill in your keys there. Check the [kits page](https://fabric.io/kits) for installation instructions that will include your Fabric keys.
 3. If you have a Fabric account
     1. Rename `app/crashlytics.properties.sample` to `app/crashlytics.properties`
-    2. Fill in your keys there
+    2. Fill in your keys there. Your API key can be found at fabric.io/settings/organizations - click the org you are using, and click to reveal the API key and secret
 4. For MoPub, you need to sign up and generate a Ad Unit id.
 5. Add that id to `app/crashlytics.properties`
 6. Run it
