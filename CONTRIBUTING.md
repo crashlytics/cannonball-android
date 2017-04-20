@@ -66,4 +66,4 @@ The goal of this project is to be an example for Fabric and we strive to keep it
 By contributing your code,
 
 You agree to license your contribution under the terms of the Apache Public License 2.0
-https://github.com/twitterdev/cannonball-android/blob/master/LICENSE
+https://github.com/crashlytics/cannonball-android/blob/master/LICENSE

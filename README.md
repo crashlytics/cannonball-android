@@ -60,7 +60,7 @@ See [how to integrate the SDK](https://docs.fabric.io/android/fabric/integration
 
 ## Get support
 
-If you need support to build the app or to understand any part of the code, let us know. Post your question at [Twitter Community](https://twittercommunity.com/c/mobile) forum.
+If you need support to build the app or to understand any part of the code, let us know. Post your question on [Stack Overflow](http://stackoverflow.com/questions/tagged/google-fabric).
 
 ## Contributing
 
@@ -84,6 +84,6 @@ The rules for contributing are available at `CONTRIBUTING.md` file.
 
 ## License
 
-Copyright 2015 Twitter, Inc and other contributors.
+Copyright 2017 Google, Inc and other contributors.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
